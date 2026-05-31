@@ -23,6 +23,7 @@
         <a href="#about"         class="nav__link">About</a>
         <a href="#experience"    class="nav__link">Experience</a>
         <a href="#projects"      class="nav__link">Projects</a>
+        <a href="#casestudy"     class="nav__link">Case Study</a>
         <a href="#certifications" class="nav__link">Certifications</a>
         <a href="#education"     class="nav__link">Education</a>
         <a href="#contact"       class="nav__link">Contact</a>
@@ -42,6 +43,7 @@
       <a href="#about"          class="mobile-menu__link">About</a>
       <a href="#experience"     class="mobile-menu__link">Experience</a>
       <a href="#projects"       class="mobile-menu__link">Projects</a>
+      <a href="#casestudy"      class="mobile-menu__link">Case Study</a>
       <a href="#certifications"  class="mobile-menu__link">Certifications</a>
       <a href="#education"      class="mobile-menu__link">Education</a>
       <a href="#contact"        class="mobile-menu__link">Contact</a>
@@ -65,6 +67,28 @@
         <div class="hero__actions reveal-up">
           <a href="#about"     class="btn btn--primary">View Work</a>
           <a href="resume.pdf" class="btn btn--ghost"   download>Download CV</a>
+        </div>
+
+        <div class="hero__stats reveal-up">
+          <div class="hero__stat">
+            <span class="hero__stat-num" data-target="200">0</span><span class="hero__stat-suffix">M</span>
+            <span class="hero__stat-label">Budget managed</span>
+          </div>
+          <div class="hero__stat-divider"></div>
+          <div class="hero__stat">
+            <span class="hero__stat-num" data-target="9.1">0</span><span class="hero__stat-suffix">B</span>
+            <span class="hero__stat-label">M&amp;A thesis</span>
+          </div>
+          <div class="hero__stat-divider"></div>
+          <div class="hero__stat">
+            <span class="hero__stat-num" data-target="12.74">0</span><span class="hero__stat-suffix">%</span>
+            <span class="hero__stat-label">Levered IRR</span>
+          </div>
+          <div class="hero__stat-divider"></div>
+          <div class="hero__stat">
+            <span class="hero__stat-num" data-target="1">0</span><span class="hero__stat-suffix">st</span>
+            <span class="hero__stat-label">of 15 teams</span>
+          </div>
         </div>
       </div>
 
@@ -291,6 +315,72 @@
       <!-- Real Estate -->
       <div class="proj-category fade-up">
         <h3 class="proj-category__label">Real Estate Finance</h3>
+
+        <!-- Interactive IRR Model -->
+        <div class="irr-widget fade-up">
+          <div class="irr-widget__header">
+            <div>
+              <div class="irr-widget__eyebrow">Live Model — Project Destined</div>
+              <h4 class="irr-widget__title">Phoenix Multifamily Acquisition — IRR Sensitivity</h4>
+            </div>
+            <span class="irr-widget__badge">Interactive</span>
+          </div>
+          <p class="irr-widget__desc">Adjust the assumptions below to see how levered IRR and equity multiple shift. Based on the 28-unit, $6.5M acquisition underwritten for Project Destined.</p>
+
+          <div class="irr-controls">
+            <div class="irr-control">
+              <div class="irr-control__top">
+                <label class="irr-control__label">Purchase Price</label>
+                <span class="irr-control__val" id="val-price">$6.5M</span>
+              </div>
+              <input type="range" id="sl-price" min="5.5" max="8.0" step="0.1" value="6.5" />
+            </div>
+            <div class="irr-control">
+              <div class="irr-control__top">
+                <label class="irr-control__label">Rent CAGR</label>
+                <span class="irr-control__val" id="val-rent">5.15%</span>
+              </div>
+              <input type="range" id="sl-rent" min="2.0" max="8.0" step="0.05" value="5.15" />
+            </div>
+            <div class="irr-control">
+              <div class="irr-control__top">
+                <label class="irr-control__label">Exit Cap Rate</label>
+                <span class="irr-control__val" id="val-cap">5.0%</span>
+              </div>
+              <input type="range" id="sl-cap" min="4.0" max="7.0" step="0.25" value="5.0" />
+            </div>
+            <div class="irr-control">
+              <div class="irr-control__top">
+                <label class="irr-control__label">Hold Period (yrs)</label>
+                <span class="irr-control__val" id="val-hold">5</span>
+              </div>
+              <input type="range" id="sl-hold" min="3" max="10" step="1" value="5" />
+            </div>
+          </div>
+
+          <div class="irr-results">
+            <div class="irr-result">
+              <span class="irr-result__num" id="res-irr">12.74%</span>
+              <span class="irr-result__label">Levered IRR</span>
+            </div>
+            <div class="irr-result__divider"></div>
+            <div class="irr-result">
+              <span class="irr-result__num" id="res-em">3.09x</span>
+              <span class="irr-result__label">Equity Multiple</span>
+            </div>
+            <div class="irr-result__divider"></div>
+            <div class="irr-result">
+              <span class="irr-result__num" id="res-tv">$11.8M</span>
+              <span class="irr-result__label">Terminal Value</span>
+            </div>
+            <div class="irr-result__divider"></div>
+            <div class="irr-result">
+              <span class="irr-result__num" id="res-signal">✦ BUY</span>
+              <span class="irr-result__label">Signal</span>
+            </div>
+          </div>
+        </div>
+
         <div class="proj-row">
 
           <div class="proj-item">
@@ -414,12 +504,228 @@
     </div>
   </section>
 
+  <!-- ── Case Study ── -->
+  <section class="section casestudy" id="casestudy">
+    <div class="section__inner">
+
+      <div class="section__header">
+        <span class="section__label">04 — Case Study</span>
+        <h2 class="section__heading fade-up">Eli Lilly × Curium Pharma<br><em>$9.1B M&amp;A Thesis</em></h2>
+      </div>
+
+      <!-- Win banner -->
+      <div class="cs-banner fade-up">
+        <div class="cs-banner__left">
+          <span class="cs-banner__award">🥇 1st Place — Eli Lilly M&amp;A Case Competition</span>
+          <p class="cs-banner__sub">Beat 15 teams from 5 universities · January 2026 · Team BioEdge</p>
+        </div>
+        <a href="projects/SK M&A Curium Pharma Pitch Deck.pdf" target="_blank" class="cs-banner__link">View Full Deck ↗</a>
+      </div>
+
+      <!-- Step 1: Context -->
+      <div class="cs-block fade-up">
+        <div class="cs-block__num">01</div>
+        <div class="cs-block__content">
+          <h3 class="cs-block__title">The Brief</h3>
+          <p class="cs-block__text">Eli Lilly has doubled revenue to ~$59B and more than tripled net income since 2021 — driven almost entirely by its GLP-1 cardiometabolic franchise. Oncology contributes just $6.8B (~15% of revenue) vs. Roche's $27.8B. The challenge: identify the highest-value M&amp;A target to build a durable, diversified oncology platform and close the gap on global leaders.</p>
+        </div>
+      </div>
+
+      <!-- Step 2: The hunt -->
+      <div class="cs-block fade-up">
+        <div class="cs-block__num">02</div>
+        <div class="cs-block__content">
+          <h3 class="cs-block__title">How We Found the Target</h3>
+          <p class="cs-block__text">We started with Lilly, not the market. We mapped five strategic "hunting zones" — Neuroscience, Oncology/Precision Medicine, Immunology, Next-Gen Therapeutics, and AI/Digital. The selection was driven by market maturity, alignment with Lilly's existing investment, and size of the capability gap.</p>
+          <div class="cs-zones">
+            <div class="cs-zone cs-zone--selected">
+              <span class="cs-zone__num">02</span>
+              <span class="cs-zone__name">Oncology &amp; Precision Medicine</span>
+              <span class="cs-zone__tag">Selected</span>
+            </div>
+            <div class="cs-zone">
+              <span class="cs-zone__num">01</span>
+              <span class="cs-zone__name">Neuroscience &amp; Alzheimer's</span>
+            </div>
+            <div class="cs-zone">
+              <span class="cs-zone__num">03</span>
+              <span class="cs-zone__name">Immunology &amp; Autoimmune</span>
+            </div>
+            <div class="cs-zone">
+              <span class="cs-zone__num">04</span>
+              <span class="cs-zone__name">Gene, Cell &amp; RNA Therapeutics</span>
+            </div>
+            <div class="cs-zone">
+              <span class="cs-zone__num">05</span>
+              <span class="cs-zone__name">AI &amp; Digital Drug Discovery</span>
+            </div>
+          </div>
+          <p class="cs-block__text">Within Oncology, we focused on radiopharmaceuticals — a $6.7B market growing at 9.3% CAGR to $14.4B by 2034. The key insight: <strong>radiopharma is a platform game, not a molecule game.</strong> Winning requires end-to-end control of diagnostics, isotope supply, manufacturing, and distribution. Lilly had early radiopharma exposure via POINT Biopharma and Radionetics — but no platform.</p>
+        </div>
+      </div>
+
+      <!-- Step 3: Competitor scoring -->
+      <div class="cs-block fade-up">
+        <div class="cs-block__num">03</div>
+        <div class="cs-block__content">
+          <h3 class="cs-block__title">Target Screening</h3>
+          <p class="cs-block__text">We screened the radiopharma landscape across three capability dimensions: diagnostics &amp; radiopharmacy operations, manufacturing infrastructure, and theranostics/radioligand therapy platform ownership.</p>
+          <div class="cs-table-wrap">
+            <table class="cs-table">
+              <thead>
+                <tr>
+                  <th>Company</th>
+                  <th>Diagnostics</th>
+                  <th>Manufacturing</th>
+                  <th>Theranostics</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="cs-table__winner">
+                  <td><strong>Curium Pharma</strong></td>
+                  <td>9</td><td>9</td><td>6</td><td><strong>24</strong></td>
+                </tr>
+                <tr>
+                  <td>Novartis (AAA)</td>
+                  <td>7</td><td>8</td><td>9</td><td>24</td>
+                </tr>
+                <tr>
+                  <td>Telix Pharmaceuticals</td>
+                  <td>6</td><td>5</td><td>7</td><td>18</td>
+                </tr>
+                <tr>
+                  <td>Lantheus</td>
+                  <td>7</td><td>4</td><td>3</td><td>14</td>
+                </tr>
+                <tr>
+                  <td>Cardinal Health</td>
+                  <td>8</td><td>5</td><td>1</td><td>14</td>
+                </tr>
+                <tr>
+                  <td>ITM</td>
+                  <td>3</td><td>7</td><td>6</td><td>16</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="cs-block__text">Curium emerged as the clear target: the largest integrated radiopharmaceutical supplier globally, with 50+ products, 14M patient doses annually across 60+ countries, and a vertically integrated platform from isotope production to last-mile delivery.</p>
+        </div>
+      </div>
+
+      <!-- Step 4: Valuation -->
+      <div class="cs-block fade-up">
+        <div class="cs-block__num">04</div>
+        <div class="cs-block__content">
+          <h3 class="cs-block__title">Valuation</h3>
+          <p class="cs-block__text">Curium was recapitalized at ~$7.1B in H2 2025. We proposed a $9.1B acquisition price, reflecting a strategic premium over the recapitalization and applying a weighted-average EV/EBITDA multiple of 26.65x to 2025E EBITDA of $312M.</p>
+          <div class="cs-comps">
+            <div class="cs-comp">
+              <span class="cs-comp__co">Telix (ASX)</span>
+              <span class="cs-comp__mult">66.8x</span>
+              <span class="cs-comp__label">EV/EBITDA</span>
+            </div>
+            <div class="cs-comp">
+              <span class="cs-comp__co">Lantheus (LNTH)</span>
+              <span class="cs-comp__mult">13.8x</span>
+              <span class="cs-comp__label">EV/EBITDA</span>
+            </div>
+            <div class="cs-comp">
+              <span class="cs-comp__co">Eckert &amp; Ziegler</span>
+              <span class="cs-comp__mult">10.5x</span>
+              <span class="cs-comp__label">EV/EBITDA</span>
+            </div>
+            <div class="cs-comp">
+              <span class="cs-comp__co">Jubilant Pharmova</span>
+              <span class="cs-comp__mult">15.5x</span>
+              <span class="cs-comp__label">EV/EBITDA</span>
+            </div>
+            <div class="cs-comp cs-comp--deal">
+              <span class="cs-comp__co">Curium (Deal)</span>
+              <span class="cs-comp__mult">26.65x</span>
+              <span class="cs-comp__label">Weighted Avg</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 5: Deal structure -->
+      <div class="cs-block fade-up">
+        <div class="cs-block__num">05</div>
+        <div class="cs-block__content">
+          <h3 class="cs-block__title">Deal Structure</h3>
+          <p class="cs-block__text">We proposed a full 100% acquisition financed 70% debt / 30% cash on hand, with an earn-out component to align sponsor incentives and reduce upfront risk.</p>
+          <div class="cs-structure">
+            <div class="cs-struct-item">
+              <div class="cs-struct-bar" style="width:80%"></div>
+              <div class="cs-struct-detail">
+                <span class="cs-struct-label">Cash at close (Sponsor)</span>
+                <span class="cs-struct-val">$5.9B · 80%</span>
+              </div>
+            </div>
+            <div class="cs-struct-item">
+              <div class="cs-struct-bar cs-struct-bar--earn" style="width:15%"></div>
+              <div class="cs-struct-detail">
+                <span class="cs-struct-label">Earn-out (EBITDA, RLT approval, Dx-Tx launch)</span>
+                <span class="cs-struct-val">$1.1B · 15%</span>
+              </div>
+            </div>
+            <div class="cs-struct-item">
+              <div class="cs-struct-bar cs-struct-bar--mgmt" style="width:5%"></div>
+              <div class="cs-struct-detail">
+                <span class="cs-struct-label">Management incentive pool</span>
+                <span class="cs-struct-val">$0.4B · 5%</span>
+              </div>
+            </div>
+          </div>
+          <p class="cs-block__text cs-block__text--note">Financing: ~$4.1B debt + $1.8B cash + $1.3M shares · Net debt/EBITDA ≈ 1.4–1.5x (&lt;2.0x)</p>
+        </div>
+      </div>
+
+      <!-- Step 6: Synergies -->
+      <div class="cs-block fade-up">
+        <div class="cs-block__num">06</div>
+        <div class="cs-block__content">
+          <h3 class="cs-block__title">Key Synergies</h3>
+          <div class="cs-synergies">
+            <div class="cs-synergy">
+              <h4 class="cs-synergy__title">Revenue Uplift</h4>
+              <p class="cs-synergy__text">+25–35% CAGR for 3 years via Lilly's oncology salesforce accelerating Curium adoption. Benchmarked against Retevmo launch post-Loxo acquisition ($275M+ revenue, RET inhibitor category leader).</p>
+            </div>
+            <div class="cs-synergy">
+              <h4 class="cs-synergy__title">Margin Expansion</h4>
+              <p class="cs-synergy__text">300–600 bps gross margin improvement via Lilly's payer access, hospital formulary leverage, and isotope sourcing economies. Lilly already negotiates with Medicare and major payer networks.</p>
+            </div>
+            <div class="cs-synergy">
+              <h4 class="cs-synergy__title">SG&amp;A Leverage</h4>
+              <p class="cs-synergy__text">10–20% SG&amp;A reduction through shared G&amp;A, marketing, and sales infrastructure. ~150 FTE overlap eliminated over 2 years post-close.</p>
+            </div>
+            <div class="cs-synergy">
+              <h4 class="cs-synergy__title">Capex Efficiency</h4>
+              <p class="cs-synergy__text">10–30% capex reduction vs. standalone growth case. Curium can leverage Lilly's Indianapolis manufacturing facility (built for POINT Biopharma), avoiding duplicate radiopharma infrastructure buildout.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Outcome -->
+      <div class="cs-outcome fade-up">
+        <div class="cs-outcome__inner">
+          <span class="cs-outcome__label">Result</span>
+          <p class="cs-outcome__text">The BioEdge team's thesis — that radiopharmaceuticals require platform ownership, not just molecule acquisition — resonated with the panel of 8 industry experts. We took <strong>1st place</strong> over 15 competing teams from 5 universities.</p>
+          <a href="projects/SK M&A Curium Pharma Pitch Deck.pdf" target="_blank" class="btn btn--primary" style="margin-top: 24px; display: inline-flex;">Read the Full 57-Page Pitch ↗</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- ── Certifications ── -->
   <section class="section certifications" id="certifications">
     <div class="section__inner">
 
       <div class="section__header">
-        <span class="section__label">04 — Certifications</span>
+        <span class="section__label">05 — Certifications</span>
         <h2 class="section__heading fade-up">Certifications</h2>
       </div>
 
@@ -480,7 +786,7 @@
     <div class="section__inner">
 
       <div class="section__header">
-        <span class="section__label">05 — Education</span>
+        <span class="section__label">06 — Education</span>
         <h2 class="section__heading fade-up">Education</h2>
       </div>
 
@@ -557,7 +863,7 @@
   <section class="section contact" id="contact">
     <div class="section__inner">
 
-      <div class="section__label fade-up">06 — Contact</div>
+      <div class="section__label fade-up">07 — Contact</div>
 
       <h2 class="contact__heading fade-up">
         Let's connect<em>.</em>
@@ -590,6 +896,114 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script src="js/main.js"></script>
+  <script>
+  /* ── IRR Sensitivity Model ── */
+  (function() {
+    const slPrice = document.getElementById('sl-price');
+    const slRent  = document.getElementById('sl-rent');
+    const slCap   = document.getElementById('sl-cap');
+    const slHold  = document.getElementById('sl-hold');
+    if (!slPrice) return;
+
+    function calcModel() {
+      const price    = parseFloat(slPrice.value);   // $M purchase
+      const rentCAGR = parseFloat(slRent.value) / 100;
+      const exitCap  = parseFloat(slCap.value)  / 100;
+      const hold     = parseInt(slHold.value);
+
+      // Base deal parameters (Project Destined)
+      const ltv          = 0.70;
+      const equity       = price * (1 - ltv);
+      const debtAmount   = price * ltv;
+      const interestRate = 0.065;
+      const baseNOI      = price * 0.052;   // ~5.2% going-in cap
+      const reno         = 0.445;           // $445K value-add
+      const equityInvest = equity + reno;
+
+      // Project NOI growth over hold period
+      let noi = baseNOI;
+      let totalCashFlow = 0;
+      for (let y = 1; y <= hold; y++) {
+        noi *= (1 + rentCAGR);
+        const debtService = debtAmount * interestRate;
+        const cashFlow = (noi - debtService) * 0.95; // 5% vacancy/expenses
+        totalCashFlow += cashFlow;
+      }
+
+      // Terminal value at exit
+      const exitNOI = baseNOI * Math.pow(1 + rentCAGR, hold + 1);
+      const terminalValue = exitNOI / exitCap;
+      const exitEquity = terminalValue - debtAmount;
+      const totalReturn = totalCashFlow + exitEquity;
+      const equityMultiple = totalReturn / equityInvest;
+
+      // IRR approximation via Newton's method
+      function npv(rate, flows) {
+        return flows.reduce((acc, cf, i) => acc + cf / Math.pow(1 + rate, i), 0);
+      }
+      const cashFlows = [-equityInvest];
+      let noi2 = baseNOI;
+      for (let y = 1; y <= hold; y++) {
+        noi2 *= (1 + rentCAGR);
+        const ds = debtAmount * interestRate;
+        cashFlows.push((noi2 - ds) * 0.95);
+      }
+      cashFlows[hold] += exitEquity;
+
+      let irr = 0.1;
+      for (let i = 0; i < 100; i++) {
+        const n = npv(irr, cashFlows);
+        const dn = cashFlows.reduce((acc, cf, t) => acc - t * cf / Math.pow(1 + irr, t + 1), 0);
+        const step = n / dn;
+        irr -= step;
+        if (Math.abs(step) < 0.00001) break;
+      }
+
+      return {
+        irr: Math.max(0, irr * 100),
+        em: equityMultiple,
+        tv: terminalValue,
+        signal: irr * 100 >= 12 ? '✦ BUY' : irr * 100 >= 8 ? '◆ HOLD' : '▼ PASS'
+      };
+    }
+
+    function update() {
+      const p = parseFloat(slPrice.value);
+      const r = parseFloat(slRent.value);
+      const c = parseFloat(slCap.value);
+      const h = parseInt(slHold.value);
+
+      document.getElementById('val-price').textContent = '$' + p.toFixed(1) + 'M';
+      document.getElementById('val-rent').textContent  = r.toFixed(2) + '%';
+      document.getElementById('val-cap').textContent   = c.toFixed(2) + '%';
+      document.getElementById('val-hold').textContent  = h;
+
+      const m = calcModel();
+      const irrEl    = document.getElementById('res-irr');
+      const emEl     = document.getElementById('res-em');
+      const tvEl     = document.getElementById('res-tv');
+      const sigEl    = document.getElementById('res-signal');
+
+      irrEl.textContent = m.irr.toFixed(2) + '%';
+      emEl.textContent  = m.em.toFixed(2) + 'x';
+      tvEl.textContent  = '$' + m.tv.toFixed(1) + 'M';
+      sigEl.textContent = m.signal;
+
+      // Color signal
+      sigEl.style.color = m.signal.includes('BUY') ? 'var(--gold)'
+                        : m.signal.includes('HOLD') ? 'var(--text-2)'
+                        : '#c0392b';
+
+      // Color IRR
+      irrEl.style.color = m.irr >= 12 ? 'var(--gold)'
+                        : m.irr >= 8  ? 'var(--text)'
+                        : '#c0392b';
+    }
+
+    [slPrice, slRent, slCap, slHold].forEach(sl => sl.addEventListener('input', update));
+    update();
+  })();
+  </script>
 
 </body>
 </html>
