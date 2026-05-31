@@ -1194,75 +1194,104 @@ body::after {
 
 .cs-outcome__text strong { color: var(--gold); font-style: italic; }
 
-/* Tab navigation */
+/* ── Tab navigation — pill style, clearly interactive ── */
 .cs-tabs {
   display: flex;
-  gap: 4px;
+  gap: 8px;
   flex-wrap: wrap;
   margin-bottom: clamp(32px, 4vw, 48px);
-  border-bottom: 1px solid var(--warm-border);
-  padding-bottom: 0;
 }
 
 .cs-tab-btn {
   font-size: 0.8125rem;
   font-weight: 500;
-  letter-spacing: 0.04em;
-  color: var(--text-3);
-  background: none;
-  border: none;
+  letter-spacing: 0.03em;
+  color: var(--text-2);
+  background: rgba(255,255,255,0.6);
+  border: 1.5px solid var(--warm-border);
+  border-radius: 99px;
   cursor: pointer;
-  padding: 10px 20px;
-  border-bottom: 2px solid transparent;
-  margin-bottom: -1px;
-  transition: color 0.2s, border-color 0.2s;
+  padding: 9px 22px;
+  transition: background 0.2s, border-color 0.2s, color 0.2s, box-shadow 0.2s;
 }
 
-.cs-tab-btn:hover { color: var(--text); }
-.cs-tab-btn.active { color: var(--navy); border-bottom-color: var(--gold); }
+.cs-tab-btn:hover {
+  background: #fff;
+  border-color: rgba(196,154,90,0.45);
+  color: var(--text);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+
+.cs-tab-btn.active {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: #fff;
+  box-shadow: 0 3px 14px rgba(27,53,88,0.22);
+}
 
 /* Tab panes */
 .cs-pane { display: none; }
 .cs-pane.active { display: block; }
 
-/* Project nav within a tab */
+/* ── Project jump nav — visible chips ── */
 .cs-proj-nav {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 32px;
-  padding: 16px 20px;
-  background: rgba(255,255,255,0.4);
-  border: 1px solid var(--warm-border);
-  border-radius: 4px;
+  margin-bottom: 40px;
+  align-items: center;
+}
+
+.cs-proj-nav::before {
+  content: 'Jump to:';
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-right: 4px;
+  flex-shrink: 0;
 }
 
 .cs-proj-nav__link {
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   font-weight: 500;
-  color: var(--text-3);
-  letter-spacing: 0.04em;
-  padding: 4px 12px;
-  border-radius: 2px;
-  border: 1px solid transparent;
-  transition: color 0.2s, border-color 0.2s, background 0.2s;
+  color: var(--navy);
+  background: rgba(27,53,88,0.07);
+  border: 1px solid rgba(27,53,88,0.16);
+  padding: 6px 14px;
+  border-radius: 99px;
+  transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+  white-space: nowrap;
 }
 
 .cs-proj-nav__link:hover {
-  color: var(--navy);
-  border-color: rgba(27,53,88,0.2);
-  background: rgba(255,255,255,0.7);
+  background: rgba(27,53,88,0.14);
+  border-color: rgba(27,53,88,0.35);
+  box-shadow: 0 2px 8px rgba(27,53,88,0.1);
 }
 
-/* Case study entries */
+/* ── Case study entry — card with clear header ── */
 .cs-entry {
-  margin-bottom: clamp(48px, 6vw, 72px);
-  padding-bottom: clamp(48px, 6vw, 72px);
-  border-bottom: 1px solid var(--warm-border);
+  background: rgba(255,255,255,0.55);
+  border: 1px solid var(--warm-border);
+  border-radius: 8px;
+  padding: clamp(28px, 4vw, 44px);
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
 }
 
-.cs-entry:last-child { border-bottom: none; }
-.cs-entry--featured { }
+.cs-entry::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: linear-gradient(90deg, var(--gold), transparent 60%);
+  opacity: 0.5;
+}
+
+.cs-entry--featured::before { opacity: 1; }
 
 .cs-entry__header {
   display: flex;
@@ -1270,34 +1299,61 @@ body::after {
   align-items: flex-start;
   gap: 20px;
   margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--warm-border);
   flex-wrap: wrap;
 }
 
 .cs-entry__cat {
-  display: block;
-  font-size: 0.6875rem;
+  display: inline-block;
+  font-size: 0.625rem;
   font-weight: 500;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--gold);
-  margin-bottom: 8px;
+  background: rgba(196,154,90,0.1);
+  border: 1px solid rgba(196,154,90,0.25);
+  padding: 3px 10px;
+  border-radius: 2px;
+  margin-bottom: 10px;
 }
 
 .cs-entry__title {
   font-family: var(--ff-display);
-  font-size: clamp(1.25rem, 2.5vw, 1.875rem);
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
   font-weight: 400;
   color: var(--text);
   letter-spacing: -0.015em;
-  line-height: 1.15;
+  line-height: 1.2;
 }
 
+/* ── File links — look like real buttons ── */
 .cs-entry__links {
   display: flex;
-  gap: 12px;
+  gap: 8px;
   align-items: center;
   flex-shrink: 0;
   flex-wrap: wrap;
+}
+
+.proj-item__link {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--navy);
+  background: rgba(27,53,88,0.07);
+  border: 1px solid rgba(27,53,88,0.2);
+  padding: 6px 14px;
+  border-radius: 4px;
+  transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+  white-space: nowrap;
+}
+
+.proj-item__link:hover {
+  background: rgba(27,53,88,0.14);
+  border-color: rgba(27,53,88,0.4);
+  box-shadow: 0 2px 8px rgba(27,53,88,0.1);
+  color: var(--navy);
 }
 
 /* Responsive */
@@ -1305,8 +1361,9 @@ body::after {
   .cs-block { grid-template-columns: 1fr; gap: 12px; }
   .cs-block__num { font-size: 1.5rem; }
   .cs-banner { flex-direction: column; align-items: flex-start; }
-  .cs-tab-btn { padding: 8px 14px; font-size: 0.75rem; }
+  .cs-tab-btn { padding: 8px 18px; font-size: 0.75rem; }
   .cs-entry__header { flex-direction: column; }
+  .cs-proj-nav::before { display: none; }
 }
 
 /* ─────────────────────────────────────────────
