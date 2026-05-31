@@ -1231,6 +1231,55 @@ body::after {
 .cs-outcome__text strong { color: #C8995A; font-style: italic; }
 
 /* ── Tab navigation — pill style, clearly interactive ── */
+/* User guide */
+.cs-guide {
+  background: rgba(0,66,106,0.05);
+  border: 1px solid rgba(0,66,106,0.14);
+  border-left: 3px solid var(--navy);
+  border-radius: 4px;
+  padding: 18px 22px;
+  margin-bottom: 28px;
+}
+
+.cs-guide__text {
+  font-size: 0.9rem;
+  color: var(--text-2);
+  line-height: 1.65;
+  margin-bottom: 14px;
+}
+
+.cs-guide__text strong {
+  color: var(--navy);
+  font-weight: 500;
+}
+
+.cs-guide__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  align-items: center;
+}
+
+.cs-guide__item {
+  font-size: 0.8125rem;
+  color: var(--text-3);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.cs-guide__btn {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--navy);
+  background: rgba(0,66,106,0.07);
+  border: 1px solid rgba(0,66,106,0.2);
+  padding: 3px 9px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+/* Tab navigation */
 .cs-tabs {
   display: flex;
   gap: 8px;
