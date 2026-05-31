@@ -48,6 +48,14 @@
   --pad-x: clamp(24px, 5vw, 80px);
 }
 
+
+/* ── Dark section color overrides: warm accent instead of crimson ── */
+.hero, .contact, footer.footer, .mobile-menu {
+  --gold:       #C8995A;
+  --gold-light: #DDB87A;
+  --gold-dim:   rgba(200, 153, 90, 0.18);
+}
+
 /* ── Reset ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -100,12 +108,12 @@ body::after {
 .nav:not(.scrolled) .nav__link { color: var(--cream-2); }
 .nav:not(.scrolled) .nav__link:hover { color: var(--gold); }
 .nav:not(.scrolled) .nav__cta {
-  background: var(--gold-dim);
-  color: var(--gold);
-  border: 1px solid rgba(153, 0, 0, 0.35);
+  background: rgba(200,153,90,0.15);
+  color: #C8995A;
+  border: 1px solid rgba(200,153,90,0.4);
 }
 .nav:not(.scrolled) .nav__cta:hover {
-  background: rgba(153, 0, 0, 0.28);
+  background: rgba(200,153,90,0.28);
   transform: none;
 }
 .nav:not(.scrolled) .nav__burger span { background: var(--cream); }
@@ -155,7 +163,7 @@ body::after {
   border-bottom: 1.5px solid transparent;
 }
 
-.nav:not(.scrolled) .nav__link:hover { border-bottom-color: rgba(153,0,0,0.5); }
+.nav:not(.scrolled) .nav__link:hover { color: var(--gold); border-bottom-color: rgba(200,153,90,0.5); }
 .nav.scrolled .nav__link:hover { border-bottom-color: var(--navy); }
 
 .nav__cta {
@@ -302,13 +310,13 @@ body::after {
 
 /* Hero context */
 .hero .btn--primary {
-  background: var(--gold);
-  color: var(--dark);
+  background: var(--navy);
+  color: #fff;
 }
 .hero .btn--primary:hover {
-  background: var(--gold-light);
+  background: var(--navy-light);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(153, 0, 0, 0.3);
+  box-shadow: 0 8px 24px rgba(27,53,88,0.3);
 }
 
 .hero .btn--ghost {
@@ -317,8 +325,8 @@ body::after {
   border: 1.5px solid rgba(237, 232, 214, 0.2);
 }
 .hero .btn--ghost:hover {
-  border-color: var(--gold);
-  color: var(--gold);
+  border-color: rgba(237,232,214,0.6);
+  color: var(--cream);
   transform: translateY(-2px);
 }
 
@@ -1044,8 +1052,9 @@ body::after {
 }
 
 .cs-zone--selected {
-  background: rgba(153,0,0,0.08);
-  border-color: rgba(153,0,0,0.35);
+  background: rgba(27,53,88,0.07);
+  border-color: rgba(27,53,88,0.25);
+  border-left: 3px solid var(--navy);
 }
 
 .cs-zone__num {
@@ -1056,7 +1065,7 @@ body::after {
   min-width: 20px;
 }
 
-.cs-zone--selected .cs-zone__num { color: var(--gold); }
+.cs-zone--selected .cs-zone__num { color: var(--navy); }
 
 .cs-zone__name {
   font-size: 0.875rem;
@@ -1071,9 +1080,9 @@ body::after {
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--gold);
-  background: rgba(153,0,0,0.12);
-  border: 1px solid rgba(153,0,0,0.3);
+  color: var(--navy);
+  background: rgba(27,53,88,0.1);
+  border: 1px solid rgba(27,53,88,0.22);
   padding: 2px 8px;
   border-radius: 2px;
 }
