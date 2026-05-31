@@ -454,12 +454,18 @@ body::after {
   padding-right: 32px;
 }
 
+.hero__stat-value {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+  line-height: 1;
+}
+
 .hero__stat-num {
   font-family: var(--ff-display);
   font-size: clamp(1.75rem, 3vw, 2.5rem);
   font-weight: 300;
   color: var(--cream);
-  line-height: 1;
   letter-spacing: -0.02em;
 }
 
