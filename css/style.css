@@ -143,15 +143,20 @@ body::after {
 }
 .nav__logo:hover { opacity: 0.65; }
 
-.nav__links { display: flex; align-items: center; gap: 36px; }
+.nav__links { display: flex; align-items: center; gap: 28px; }
 
 .nav__link {
   font-size: 0.8125rem;
   font-weight: 500;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  transition: color 0.25s;
+  transition: color 0.25s, border-color 0.25s;
+  padding-bottom: 3px;
+  border-bottom: 1.5px solid transparent;
 }
+
+.nav:not(.scrolled) .nav__link:hover { border-bottom-color: rgba(196,154,90,0.5); }
+.nav.scrolled .nav__link:hover { border-bottom-color: var(--navy); }
 
 .nav__cta {
   font-size: 0.8125rem;
@@ -250,7 +255,7 @@ body::after {
 
 .section__label {
   display: block;
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -341,7 +346,7 @@ body::after {
 /* Tags */
 .tag {
   display: inline-block;
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -400,15 +405,15 @@ body::after {
   padding: clamp(48px, 8vw, 100px) var(--pad-x);
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 400px;
+  grid-template-columns: 1fr 300px;
   align-items: center;
-  gap: 60px;
+  gap: 48px;
   position: relative;
   z-index: 1;
 }
 
 .hero__eyebrow {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -418,15 +423,17 @@ body::after {
 
 .hero__name {
   font-family: var(--ff-display);
-  font-size: clamp(3.5rem, 9vw, 8rem);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
   font-weight: 400;
-  line-height: 0.95;
+  line-height: 1;
   letter-spacing: -0.025em;
   color: var(--cream);
   margin-bottom: 28px;
+  white-space: nowrap;
 }
 
-.hero__name-line { display: block; }
+.hero__name-line { display: inline; }
+.hero__name-line + .hero__name-line::before { content: ' '; }
 
 .hero__tagline {
   font-size: clamp(0.8125rem, 1.2vw, 0.9375rem);
@@ -478,7 +485,7 @@ body::after {
 }
 
 .hero__stat-label {
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   font-weight: 400;
   color: var(--cream-3);
   letter-spacing: 0.1em;
@@ -497,8 +504,8 @@ body::after {
 .hero__photo { display: flex; justify-content: flex-end; }
 
 .hero__photo-frame {
-  width: 360px;
-  height: 440px;
+  width: 280px;
+  height: 340px;
   border-radius: 4px;
   overflow: hidden;
   position: relative;
@@ -532,7 +539,7 @@ body::after {
   justify-content: center;
   gap: 16px;
   color: rgba(196, 154, 90, 0.35);
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -540,25 +547,8 @@ body::after {
 .hero__photo-placeholder svg { width: 100px; }
 
 /* Scroll indicator */
-.hero__scroll-indicator {
-  position: absolute;
-  bottom: 36px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1;
-}
-
-.hero__scroll-line {
-  width: 1px;
-  height: 56px;
-  background: linear-gradient(to bottom, transparent, var(--gold));
-  animation: scroll-pulse 2.2s ease-in-out infinite;
-}
-
-@keyframes scroll-pulse {
-  0%, 100% { opacity: 0.25; transform: scaleY(1); }
-  50%       { opacity: 0.85; transform: scaleY(1.08); }
-}
+.hero__scroll-indicator { display: none; }
+.hero__scroll-line { display: none; }
 
 /* ─────────────────────────────────────────────
    About
@@ -640,7 +630,7 @@ body::after {
 
 .timeline__date {
   display: block;
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -671,6 +661,36 @@ body::after {
   max-width: 580px;
 }
 
+.timeline__bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 18px 0;
+  max-width: 580px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.timeline__bullets li {
+  font-size: 0.9375rem;
+  color: var(--text-2);
+  line-height: 1.65;
+  padding-left: 18px;
+  position: relative;
+}
+
+.timeline__bullets li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--gold);
+  opacity: 0.7;
+}
+
 .timeline__tags { display: flex; flex-wrap: wrap; gap: 8px; }
 
 /* ─────────────────────────────────────────────
@@ -688,7 +708,7 @@ body::after {
 }
 
 .proj-category__label {
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -755,7 +775,7 @@ body::after {
 }
 
 .proj-item__type {
-  font-size: 0.625rem;
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -1045,7 +1065,7 @@ body::after {
 .cs-zone--selected .cs-zone__name { color: var(--text); font-weight: 500; }
 
 .cs-zone__tag {
-  font-size: 0.625rem;
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -1074,7 +1094,7 @@ body::after {
   background: rgba(255,255,255,0.6);
   padding: 10px 16px;
   text-align: left;
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -1120,7 +1140,7 @@ body::after {
 .cs-comp--deal .cs-comp__co { color: var(--gold); font-weight: 500; }
 .cs-comp__mult { font-family: var(--ff-display); font-size: 1.75rem; font-weight: 300; color: var(--text); line-height: 1; }
 .cs-comp--deal .cs-comp__mult { color: var(--navy); }
-.cs-comp__label { font-size: 0.6875rem; color: var(--text-3); letter-spacing: 0.06em; }
+.cs-comp__label { font-size: 0.75rem; color: var(--text-3); letter-spacing: 0.06em; }
 
 /* Deal structure bars */
 .cs-structure { display: flex; flex-direction: column; gap: 12px; margin: 20px 0; }
@@ -1181,7 +1201,7 @@ body::after {
 
 .cs-outcome__label {
   display: block;
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -1250,7 +1270,7 @@ body::after {
 
 .cs-proj-nav::before {
   content: 'Jump to:';
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -1312,7 +1332,7 @@ body::after {
 
 .cs-entry__cat {
   display: inline-block;
-  font-size: 0.625rem;
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -1402,7 +1422,7 @@ body::after {
 }
 
 .irr-widget__eyebrow {
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -1419,7 +1439,7 @@ body::after {
 }
 
 .irr-widget__badge {
-  font-size: 0.625rem;
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -1517,7 +1537,7 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.2); }
 }
 
 .irr-result__label {
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -1589,7 +1609,7 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.2); }
 .cert__card:hover::before { opacity: 1; }
 
 .cert__issuer {
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -1615,7 +1635,7 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.2); }
 .cert__badge {
   display: inline-block;
   font-family: var(--ff-body);
-  font-size: 0.625rem;
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1655,7 +1675,7 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.2); }
 .edu__item:first-child { border-top: 1px solid var(--warm-border); }
 
 .edu__years {
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -1708,7 +1728,7 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.2); }
 }
 
 .skills__label {
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -1775,7 +1795,7 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.2); }
 .contact__link:hover { padding-left: 14px; }
 
 .contact__link-label {
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
