@@ -247,7 +247,7 @@ body::after {
 /* ─────────────────────────────────────────────
    Shared Section
 ───────────────────────────────────────────── */
-.section { padding: clamp(48px, 6vw, 80px) 0; }
+.section { padding: clamp(28px, 3.5vw, 48px) 0; }
 
 .about      { background: var(--warm); }
 .mgh-section {
@@ -264,7 +264,7 @@ body::after {
   padding: 0 var(--pad-x);
 }
 
-.section__header { margin-bottom: clamp(28px, 4vw, 44px); }
+.section__header { margin-bottom: clamp(20px, 3vw, 32px); }
 
 .section__label {
   display: block;
@@ -809,7 +809,7 @@ body::after {
 
 /* Category groupings */
 .proj-category {
-  margin-bottom: clamp(28px, 4vw, 44px);
+  margin-bottom: 2px;
 }
 
 .proj-category__label {
@@ -2171,7 +2171,7 @@ button.proj-category__label.open .acc-chevron { transform: rotate(180deg); }
   padding-top: 0;
   transition: padding-top 0.42s cubic-bezier(0.4,0,0.2,1);
 }
-.acc-panel.open .acc-panel__inner { padding-top: 14px; }
+.acc-panel.open .acc-panel__inner { padding-top: 14px; padding-bottom: 20px; }
 
 /* Section-level accordion (Case Studies, Certifications) */
 .section__header--acc {
@@ -2179,6 +2179,7 @@ button.proj-category__label.open .acc-chevron { transform: rotate(180deg); }
   align-items: flex-end;
   justify-content: space-between;
   gap: 24px;
+  margin-bottom: 0;
 }
 .acc-section-btn {
   all: unset;
@@ -2202,3 +2203,6 @@ button.proj-category__label.open .acc-chevron { transform: rotate(180deg); }
 .acc-section-btn:hover { color: var(--gold-light); border-color: var(--gold); }
 .acc-section-btn .acc-chevron { transition: transform 0.35s ease; }
 .acc-section-btn.open .acc-chevron { transform: rotate(180deg); }
+
+/* When section accordion is open, restore spacing above content */
+.acc-panel--section.open .acc-panel__inner { padding-top: clamp(20px, 3vw, 32px); }
