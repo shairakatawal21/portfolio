@@ -11,6 +11,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="css/style.css" />
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXX');
+  </script>
 </head>
 <body>
 
@@ -21,7 +29,6 @@
 
       <div class="nav__links">
         <a href="#about"         class="nav__link">About</a>
-        <a href="#experience"    class="nav__link">Experience</a>
         <a href="#projects"      class="nav__link">Projects</a>
         <a href="#casestudy"     class="nav__link">Case Study</a>
         <a href="#certifications" class="nav__link">Certifications</a>
@@ -41,7 +48,6 @@
   <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
     <div class="mobile-menu__inner">
       <a href="#about"          class="mobile-menu__link">About</a>
-      <a href="#experience"     class="mobile-menu__link">Experience</a>
       <a href="#projects"       class="mobile-menu__link">Projects</a>
       <a href="#casestudy"      class="mobile-menu__link">Case Study</a>
       <a href="#certifications"  class="mobile-menu__link">Certifications</a>
@@ -148,110 +154,12 @@
     </div>
   </section>
 
-  <!-- ── Experience ── -->
-  <section class="section experience" id="experience">
-    <div class="section__inner">
-
-      <div class="section__header">
-        <span class="section__label">02. Experience</span>
-        <h2 class="section__heading fade-up">Work Experience</h2>
-      </div>
-
-      <div class="timeline">
-
-        <div class="timeline__item fade-up">
-          <div class="timeline__left">
-            <span class="timeline__date">Mar 2026. Apr 2026</span>
-            <span class="timeline__company">Project Destined</span>
-          </div>
-          <div class="timeline__right">
-            <h3 class="timeline__role">Real Estate Private Equity Virtual Intern</h3>
-            <ul class="timeline__bullets">
-              <li>Underwrote a 28-unit, $6.5M Phoenix multifamily acquisition projecting a 12.74% levered IRR and 3.09x equity multiple</li>
-              <li>Modeled a $445K value-add renovation plan driving a 5.15% rent CAGR and $11.8M terminal value at a 5.0% exit cap rate</li>
-              <li>Pitched risk-adjusted investment thesis to an industry professional covering interest rate sensitivity and market dynamics</li>
-            </ul>
-            <div class="timeline__tags">
-              <span class="tag">Real Estate PE</span>
-              <span class="tag">IRR / Equity Multiple</span>
-              <span class="tag">Excel</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="timeline__item fade-up">
-          <div class="timeline__left">
-            <span class="timeline__date">Jun 2023. Mar 2025</span>
-            <span class="timeline__company">Massachusetts General Hospital</span>
-          </div>
-          <div class="timeline__right">
-            <h3 class="timeline__role">Financial Analyst</h3>
-            <ul class="timeline__bullets">
-              <li>Served as primary finance lead for 7+ clinical service lines, delivering monthly FP&amp;A presentations to directors and the CFO</li>
-              <li>Engineered a driver-based forecasting model for a $200M multi-department budget, improving forecast accuracy by 8% via scenario planning and DCF-style volatility testing</li>
-              <li>Uncovered $500K+ in cost-saving opportunities through deep-dive cost structure, working capital, and margin analysis</li>
-              <li>Automated reporting workflows using SQL and Snowflake, reducing monthly reporting time by 25% and improving data reliability</li>
-              <li>Produced 15+ insight-driven presentations translating valuation-style scenario modeling into CFO-level strategic decisions</li>
-            </ul>
-            <div class="timeline__tags">
-              <span class="tag">FP&amp;A</span>
-              <span class="tag">DCF / Scenario Modeling</span>
-              <span class="tag">SQL · Snowflake</span>
-              <span class="tag">Tableau</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="timeline__item fade-up">
-          <div class="timeline__left">
-            <span class="timeline__date">Mar 2023. May 2023</span>
-            <span class="timeline__company">Horsepower Brands LLC</span>
-          </div>
-          <div class="timeline__right">
-            <h3 class="timeline__role">Data Analyst</h3>
-            <ul class="timeline__bullets">
-              <li>Built automated KPI dashboards via Power Query for a portfolio representing 10% of total company revenue, providing franchise owners and executives with real-time operational visibility</li>
-              <li>Drove a 10% increase in pricing compliance through weekly data-driven briefings aligning franchise performance with corporate profitability goals</li>
-              <li>Conducted data analysis and validation across 12+ portfolio companies using Python and AI-assisted tools, synthesizing complex financial trends into actionable recommendations</li>
-            </ul>
-            <div class="timeline__tags">
-              <span class="tag">Power Query</span>
-              <span class="tag">Python</span>
-              <span class="tag">Portfolio Analysis</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="timeline__item fade-up">
-          <div class="timeline__left">
-            <span class="timeline__date">Aug 2021. Dec 2022</span>
-            <span class="timeline__company">Idaho National Laboratory</span>
-          </div>
-          <div class="timeline__right">
-            <h3 class="timeline__role">Data Analytics Intern</h3>
-            <ul class="timeline__bullets">
-              <li>Designed and deployed 15+ Power BI dashboards integrating financial KPIs, performance benchmarks, and operational risk indicators, reducing analysis time by 30%</li>
-              <li>Developed working capital-linked performance benchmark and analytics workflows, increasing planning accuracy by 20%</li>
-              <li>Mentored 5+ junior analysts on project valuation logic and reporting standards, improving team-wide analytical quality</li>
-            </ul>
-            <div class="timeline__tags">
-              <span class="tag">Power BI</span>
-              <span class="tag">Working Capital</span>
-              <span class="tag">Financial KPIs</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
   <!-- ── Projects ── -->
   <section class="section projects" id="projects">
     <div class="section__inner">
 
       <div class="section__header">
-        <span class="section__label">03. Projects</span>
+        <span class="section__label">02. Projects</span>
         <h2 class="section__heading fade-up">Selected Work</h2>
       </div>
 
@@ -538,7 +446,7 @@
     <div class="section__inner">
 
       <div class="section__header">
-        <span class="section__label">04. Case Studies</span>
+        <span class="section__label">03. Case Studies</span>
         <h2 class="section__heading fade-up">Deep-Dive<br><em>Case Studies</em></h2>
       </div>
 
@@ -827,7 +735,7 @@
     <div class="section__inner">
 
       <div class="section__header">
-        <span class="section__label">05. Certifications</span>
+        <span class="section__label">04. Certifications</span>
         <h2 class="section__heading fade-up">Certifications</h2>
       </div>
 
@@ -901,7 +809,7 @@
     <div class="section__inner">
 
       <div class="section__header">
-        <span class="section__label">06. Education</span>
+        <span class="section__label">05. Education</span>
         <h2 class="section__heading fade-up">Education</h2>
       </div>
 

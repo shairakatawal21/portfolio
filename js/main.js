@@ -78,27 +78,8 @@ if (projectCards.length) {
   });
 }
 
-/* ── Timeline items stagger ── */
-const timelineItems = document.querySelectorAll('.timeline__item');
-if (timelineItems.length) {
-  ScrollTrigger.create({
-    trigger: '.timeline',
-    start: 'top 80%',
-    once: true,
-    onEnter: () => {
-      gsap.to(timelineItems, {
-        opacity: 1,
-        y: 0,
-        duration: 0.75,
-        ease: 'power3.out',
-        stagger: 0.12,
-      });
-    },
-  });
-}
-
 /* ── Scroll-triggered fade-ups (excludes stagger-managed elements) ── */
-const staggerManaged = new Set([...projectCards, ...timelineItems]);
+const staggerManaged = new Set([...projectCards]);
 document.querySelectorAll('.fade-up').forEach(el => {
   if (staggerManaged.has(el)) return;
   gsap.to(el, {
