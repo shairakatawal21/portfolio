@@ -42,25 +42,7 @@ gsap.to(heroEls, {
   delay: 0.2,
 });
 
-/* ── Hero stats counter animation ── */
-document.querySelectorAll('.hero__stat-num').forEach(el => {
-  const target = parseFloat(el.dataset.target);
-  const isDecimal = target % 1 !== 0;
-  // Start invisible so pre-populated real value never flashes
-  gsap.set(el, { opacity: 0 });
-  gsap.to({ val: 0 }, {
-    val: target,
-    duration: 1.8,
-    ease: 'power2.out',
-    delay: 0.9,
-    onStart: function() { gsap.set(el, { opacity: 1 }); },
-    onUpdate: function() {
-      el.textContent = isDecimal
-        ? this.targets()[0].val.toFixed(2)
-        : Math.round(this.targets()[0].val);
-    }
-  });
-});
+/* Stats: displayed as static values (no count-up animation) */
 
 /* ── Project cards: staggered within grid ── */
 const projectCards = document.querySelectorAll('.project-card');
