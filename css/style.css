@@ -311,13 +311,14 @@ body::after {
 
 /* Hero context */
 .hero .btn--primary {
-  background: var(--navy);
-  color: #fff;
+  background: #C8995A;
+  color: #191919;
+  font-weight: 600;
 }
 .hero .btn--primary:hover {
-  background: var(--navy-light);
+  background: #DDB87A;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0,66,106,0.3);
+  box-shadow: 0 8px 24px rgba(200,153,90,0.35);
 }
 
 .hero .btn--ghost {
