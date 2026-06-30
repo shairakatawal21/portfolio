@@ -119,6 +119,32 @@ sections.forEach(section => {
   });
 });
 
+/* ── Accordion: project category buckets ── */
+document.querySelectorAll('button.proj-category__label').forEach(trigger => {
+  trigger.addEventListener('click', () => {
+    const panelId = trigger.getAttribute('aria-controls');
+    const panel   = document.getElementById(panelId);
+    if (!panel) return;
+    const isOpen  = trigger.classList.contains('open');
+    trigger.classList.toggle('open', !isOpen);
+    trigger.setAttribute('aria-expanded', String(!isOpen));
+    panel.classList.toggle('open', !isOpen);
+  });
+});
+
+/* ── Accordion: section-level (Case Studies, Certifications) ── */
+document.querySelectorAll('.acc-section-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const panelId = btn.getAttribute('aria-controls');
+    const panel   = document.getElementById(panelId);
+    if (!panel) return;
+    const isOpen  = btn.classList.contains('open');
+    btn.classList.toggle('open', !isOpen);
+    btn.setAttribute('aria-expanded', String(!isOpen));
+    panel.classList.toggle('open', !isOpen);
+  });
+});
+
 /* ── Smooth scroll offset for fixed nav ── */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', e => {
