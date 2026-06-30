@@ -249,8 +249,9 @@ body::after {
 ───────────────────────────────────────────── */
 .section { padding: clamp(48px, 6vw, 80px) 0; }
 
-.about    { background: var(--warm); }
-.projects { background: var(--warm); }
+.about      { background: var(--warm); }
+.mgh-section { background: var(--dark); }
+.projects   { background: var(--warm); }
 .experience { background: var(--warm-alt); }
 .education  { background: var(--warm-alt); }
 
@@ -563,6 +564,94 @@ body::after {
 /* ─────────────────────────────────────────────
    About
 ───────────────────────────────────────────── */
+/* ── MGH Section ── */
+.mgh-section .section__label { color: #C8995A; }
+.mgh-section .section__label::after { background: #C8995A; }
+.mgh-section .section__heading { color: var(--cream); }
+.mgh-section .section__heading em { color: #C8995A; font-style: italic; }
+
+.mgh__sub {
+  font-size: 0.9rem;
+  color: var(--cream-2);
+  letter-spacing: 0.04em;
+  margin-top: 8px;
+}
+
+.mgh__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--dark-border);
+  border: 1px solid var(--dark-border);
+  border-radius: 5px;
+  overflow: hidden;
+  margin: clamp(24px, 3vw, 40px) 0;
+}
+
+.mgh__stat-block {
+  background: var(--dark-surface);
+  padding: clamp(20px, 3vw, 32px);
+  text-align: left;
+}
+
+.mgh__stat-num {
+  font-family: var(--ff-display);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 300;
+  color: #C8995A;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.mgh__stat-label {
+  font-size: 0.8rem;
+  color: var(--cream-2);
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+
+.mgh__blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid var(--dark-border);
+}
+
+.mgh__block {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 32px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--dark-border);
+}
+
+.mgh__block-num {
+  font-family: var(--ff-display);
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: var(--cream-3);
+  padding-top: 4px;
+}
+
+.mgh__block-title {
+  font-family: var(--ff-display);
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--cream);
+  margin-bottom: 8px;
+}
+
+.mgh__block-text {
+  font-size: 0.9375rem;
+  color: var(--cream-2);
+  line-height: 1.7;
+}
+
+@media (max-width: 700px) {
+  .mgh__grid { grid-template-columns: repeat(2, 1fr); }
+  .mgh__block { grid-template-columns: 36px 1fr; gap: 16px; }
+}
+
 .about {
   /* Subtle warm glow from top-right */
   background:
