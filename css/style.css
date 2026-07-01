@@ -416,24 +416,14 @@ body::after {
 .hero__inner {
   max-width: var(--max-w);
   margin: 0 auto;
-  padding: clamp(40px, 6vh, 80px) var(--pad-x);
+  padding: clamp(48px, 7vh, 96px) var(--pad-x);
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: 1fr clamp(190px, 18vw, 240px);
+  align-items: start;
+  gap: 48px;
   position: relative;
   z-index: 1;
-}
-
-.hero__header {
-  /* eyebrow + name — full width above the two-column body */
-}
-
-.hero__body {
-  display: grid;
-  grid-template-columns: 1fr clamp(260px, 28vw, 380px);
-  align-items: stretch;
-  gap: 48px;
 }
 
 .hero__eyebrow {
@@ -536,12 +526,11 @@ body::after {
 }
 
 /* Photo */
-.hero__photo { display: flex; justify-content: flex-end; align-items: stretch; }
+.hero__photo { display: flex; justify-content: flex-end; align-items: flex-start; }
 
 .hero__photo-frame {
   width: 100%;
-  height: 100%;
-  min-height: 0;
+  height: auto;
   border-radius: 4px;
   overflow: hidden;
   position: relative;
@@ -561,9 +550,8 @@ body::after {
 
 .hero__photo-frame img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top center;
+  height: auto;
+  display: block;
 }
 
 .hero__photo-placeholder {
@@ -2039,9 +2027,9 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.2); }
   .nav__links { display: none; }
   .nav__burger { display: flex; }
 
-  .hero__body {
+  .hero__inner {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 36px;
     text-align: center;
   }
 
@@ -2049,7 +2037,7 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.2); }
   .hero__actions { justify-content: center; }
   .hero__stats { justify-content: center; flex-wrap: wrap; row-gap: 16px; }
 
-  .hero__photo { justify-content: center; order: -1; }
+  .hero__photo { justify-content: center; }
   .hero__photo-frame { width: 240px; height: 280px; }
 
   /* about grid removed */
