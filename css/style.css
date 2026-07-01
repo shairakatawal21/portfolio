@@ -420,8 +420,8 @@ body::after {
   padding: clamp(16px, 2.5vw, 36px) var(--pad-x);
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr clamp(220px, 22vw, 290px);
-  align-items: center;
+  grid-template-columns: 1fr clamp(300px, 34vw, 460px);
+  align-items: stretch;
   gap: 48px;
   position: relative;
   z-index: 1;
@@ -527,11 +527,12 @@ body::after {
 }
 
 /* Photo */
-.hero__photo { display: flex; justify-content: flex-end; align-items: flex-start; }
+.hero__photo { display: flex; justify-content: flex-end; align-items: stretch; }
 
 .hero__photo-frame {
   width: 100%;
-  height: clamp(300px, 45vh, 420px);
+  height: 100%;
+  min-height: 380px;
   border-radius: 4px;
   overflow: hidden;
   position: relative;
