@@ -526,7 +526,7 @@ body::after {
 }
 
 /* Photo */
-.hero__photo { display: flex; justify-content: flex-end; align-items: flex-start; }
+.hero__photo { display: flex; justify-content: center; align-items: flex-start; }
 
 .hero__photo-frame {
   width: 100%;
