@@ -467,15 +467,7 @@ body::after {
   max-width: 58ch;
 }
 
-.hero__bottom-row {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  flex-wrap: wrap;
-  margin-top: 14px;
-}
-
-.hero__actions { display: flex; gap: 10px; align-items: center; flex-shrink: 0; }
+.hero__actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 0; align-items: center; }
 
 /* Stats bar */
 .hero__stats {
@@ -483,6 +475,8 @@ body::after {
   align-items: center;
   gap: 0;
   flex-wrap: nowrap;
+  margin-top: 14px;
+  margin-bottom: 18px;
 }
 
 .hero__stat {
@@ -536,7 +530,7 @@ body::after {
 
 .hero__photo-frame {
   width: 100%;
-  height: clamp(300px, 44vh, 420px);
+  height: clamp(320px, 48vh, 440px);
   border-radius: 4px;
   overflow: hidden;
   position: relative;
