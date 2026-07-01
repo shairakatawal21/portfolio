@@ -420,8 +420,8 @@ body::after {
   padding: clamp(40px, 5vw, 72px) var(--pad-x);
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 280px;
-  align-items: start;
+  grid-template-columns: clamp(260px, 30vw, 380px) 1fr;
+  align-items: stretch;
   gap: 56px;
   position: relative;
   z-index: 1;
@@ -455,7 +455,7 @@ body::after {
   font-weight: 300;
   color: var(--cream-2);
   letter-spacing: 0.06em;
-  margin-bottom: 12px;
+  margin-bottom: 0;
 }
 
 .hero__about {
@@ -477,6 +477,8 @@ body::after {
   gap: 0;
   flex-wrap: wrap;
   row-gap: 20px;
+  margin-top: 20px;
+  margin-bottom: 24px;
 }
 
 .hero__stat {
@@ -526,11 +528,12 @@ body::after {
 }
 
 /* Photo */
-.hero__photo { display: flex; justify-content: flex-end; }
+.hero__photo { display: flex; justify-content: flex-start; align-items: stretch; }
 
 .hero__photo-frame {
-  width: 270px;
-  height: 360px;
+  width: 100%;
+  min-height: 420px;
+  height: 100%;
   border-radius: 4px;
   overflow: hidden;
   position: relative;
@@ -2030,15 +2033,16 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.2); }
 
   .hero__inner {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 36px;
     text-align: center;
   }
 
   .hero__about { max-width: none; text-align: left; }
   .hero__actions { justify-content: center; }
+  .hero__stats { justify-content: center; }
 
-  .hero__photo { justify-content: center; order: -1; }
-  .hero__photo-frame { width: 240px; height: 300px; }
+  .hero__photo { justify-content: center; }
+  .hero__photo-frame { width: 100%; min-height: 300px; height: 300px; }
 
   /* about grid removed */
 
