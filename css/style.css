@@ -420,7 +420,7 @@ body::after {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr clamp(240px, 24vw, 320px);
-  align-items: start;
+  align-items: center;
   gap: 48px;
   position: relative;
   z-index: 1;
